@@ -317,7 +317,7 @@ Array.prototype.add = function(tar,idx){
 
 MVVM은 두가지 디자인 패턴을 사용합니다. 바로 Command패턴과 Data Binding 인데요. 이 두가지 패턴으로 인해 View와 ViewModel은 의존성이 완전히 사라지게 됩니다. MVP와 마찬가지로 View에서 입력이 들어오구요. 입력이 들어오면 Command 패턴을 통해 ViewModel에 명령을 내리게 되고 Data Binding으로 인해 ViewModel의 값이 변화하면 바로 View의 정보가 바뀌어져 버리게 됩니다.
 
-**데이터 플로우 흐름**
+**Data Flow Stream**
 
 1. View에 입력이 들어오면 Command 패턴으로 ViewModel에 명령을 합니다.
 2. ViewModel은 필요한 데이터를 Model에 요청 합니다.
