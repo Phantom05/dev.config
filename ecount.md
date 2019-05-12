@@ -158,8 +158,7 @@ foo = 1; // 할당문에서 할당 단계가 실행된다.
 console.log(foo); // 1
 ```
 
-![let-lifecycle](C:\Users\monst\Desktop\let-lifecycle.png)
-
+![let-lifecycle](https://user-images.githubusercontent.com/33567964/57579749-8afce480-74db-11e9-910b-5123c9af41ef.png)
 
 
 **요약 표**
