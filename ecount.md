@@ -166,9 +166,9 @@ console.log(foo); // 1
 |           | const | let   | var      |
 | :-------- | ----- | ----- | -------- |
 | 스코프    | block | block | function |
-| 재대이    | X     | O     | O        |
+| 재대    | X     | O     | O        |
 | 재선언    | X     | X     | O        |
-| 호이스팅  | X     | X     | O        |
+| 호이스팅  | O     | O     | O        |
 | 사용 권장 | 1순위 | 2순위 | 3순위    |
 
 
