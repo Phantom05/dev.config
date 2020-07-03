@@ -37,16 +37,14 @@ const config = {
   module: {
     rules: [
       {
+        //   //babel이 있어야 일반 type 없는 js를 ts에 넣을 수 있음
         test: /\.(js|jsx)$/,
         use: "babel-loader",
         exclude: /node_modules/,
       },
+
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
-        exclude: /\.module\.css$/,
-      },
-      {
+        // ts-loader에다가 js확장자를 넣으면 안됨
         test: /\.ts(x)?$/,
         loader: "ts-loader",
         exclude: /node_modules/,
@@ -64,11 +62,18 @@ const config = {
           },
         ],
         include: /\.module\.css$/,
+        exclude: /\.module\.css$/,
       },
       {
         test: /\.scss$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
+      { test: /\.html$/, use: "html-loader" },
+      {
+        test: /\.(jpe?g|gif|bmp|mp3|mp4|ogg|wav|eot|ttf|woff|woff2)$/,
+        use: "file-loader",
+      },
+      { test: /\.(a?png|svg)$/, use: "url-loader?limit=10000" },
     ],
   },
   resolve: {
