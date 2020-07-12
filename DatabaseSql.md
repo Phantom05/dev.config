@@ -53,6 +53,26 @@
 
 
 
++ **LIKE** - Used to search for the specified pattern.
+  - SELECT * FROM Products WHERE ProductName LIKE '%s'
+  - SELECT * FROM Products WHERE ProductName LIKE '_h%'
+  - SELECT * FROM Customers
+    WHERE CustomerName LIKE '%Hungry%';
+  - SELECT * FROM Customers
+    WHERE CustomerName LIKE 'a__%'; (a로 시작하는 3글자)
+  - SELECT * FROM Customers
+    WHERE ContactName LIKE 'a%o';
+  - SELECT * FROM Customers
+    WHERE CustomerName NOT LIKE 'a%';
+  - SELECT * FROM Customers WHERE ContactName LIKE 'a%' OR  ContactName LIKE 'b%'  OR  ContactName LIKE 'c%'
++ **IN** - Put multiple conditions in the where statement.
+  - SELECT * FROM Customers
+    WHERE Country IN ('Germany','UK');
+  - SELECT * FROM Customers
+    WHERE Country IN (SELECT Country FROM Suppliers LIMIT 3);
+  - SELECT * FROM Customers
+    WHERE Country IN (SELECT DISTINCT Country FROM Suppliers WHERE Country IN ('UK','USA'));
+
 + **LIMIT** - Test with null value
   + SELECT * FROM Customers LIMIT 3;
   + SELECT * FROM Customers
