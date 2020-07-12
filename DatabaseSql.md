@@ -37,19 +37,15 @@
   - INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
     VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
 
-- **CREATE DATABASE** - creates a new database
+- **JOIN** - deletes data from a database
 
-- **ALTER DATABASE** - modifies a database
+  - SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+    FROM Orders
+    INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
 
-- **CREATE TABLE** - creates a new table
 
-- **ALTER TABLE** - modifies a table
 
-- **DROP TABLE** - deletes a table
-
-- **CREATE INDEX** - creates an index (search key)
-
-- **DROP INDEX** - deletes an index
+![srjrsthjetghwr](https://user-images.githubusercontent.com/33567964/87237665-29fcd380-c434-11ea-9a44-f3c38a3ff3d6.png)
 
 
 
@@ -81,6 +77,19 @@
 + **MIN & MAX** - Find the maximum and minimum value.
   - SELECT MIN(Price) AS SmallestPrice
     FROM Products; 
++ **BETWEEN** - Find the value between.
+  - SELECT * FROM Products
+    WHERE Price BETWEEN 1 AND 5;
+  - SELECT * FROM Products
+    WHERE Price NOT BETWEEN 10 AND 20;
+  - SELECT * FROM Products
+    WHERE Price BETWEEN 10 AND 20
+    AND CategoryID NOT IN (1,2,8);
+  - SELECT * FROM Products
+    WHERE ProductName BETWEEN "Carnarvon Tigers" AND "Chef Anton's Cajun Seasoning"
+    ORDER BY ProductName;
+  - SELECT * FROM Orders
+    WHERE OrderDate BETWEEN '1996-07-01' AND '1996-07-31';
 + **AVG** - Find the average value.
   - SELECT AVG(Price) AS AveragePrice
     FROM Products;
@@ -90,3 +99,18 @@
     WHERE Address IS NULL;
   + SELECT * FROM Customers 
     WHERE Address IS NOT NULL;
++ **AS** - Test with null value
+  - SELECT CustomerID AS ID, CustomerName AS Customer
+    FROM Customers;
+  - SELECT CustomerName AS Customer, ContactName AS [Contact Person] (띄어쓰기)
+    FROM Customers;
+
+
+
+- **CREATE DATABASE** - creates a new database
+- **ALTER DATABASE** - modifies a database
+- **CREATE TABLE** - creates a new table
+- **ALTER TABLE** - modifies a table
+- **DROP TABLE** - deletes a table
+- **CREATE INDEX** - creates an index (search key)
+- **DROP INDEX** - deletes an index
