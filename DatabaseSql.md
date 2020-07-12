@@ -30,6 +30,8 @@
 
 - **DELETE** - deletes data from a database
 
+  - DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
+
 - **INSERT INTO** - inserts new data into a database
 
   - INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
@@ -51,7 +53,17 @@
 
 
 
-
++ **LIMIT** - Test with null value
+  + SELECT * FROM Customers LIMIT 3;
+  + SELECT * FROM Customers
+    WHERE Country='Germany'
+    LIMIT 5;
++ **MIN & MAX** - Find the maximum and minimum value.
+  - SELECT MIN(Price) AS SmallestPrice
+    FROM Products; 
++ **AVG** - Find the average value.
+  - SELECT AVG(Price) AS AveragePrice
+    FROM Products;
 
 + **IS NULL** - Test with null value
   + SELECT * FROM Customers 
